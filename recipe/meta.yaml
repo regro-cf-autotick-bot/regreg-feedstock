@@ -1,6 +1,6 @@
 {% set name = "regreg" %}
-{% set version = "0.1.6" %}
-{% set sha256 = "e950d7a2e0898349b3f951cd337b47d00aefa8455f600f0ab103b4eb48f8e3a3" %}
+{% set version = "0.2.0" %}
+{% set sha256 = "e43865deec61f9e52d2dde6c2efd98e550659a3786ccf9493d56ac6da8420774" %}
 
 package:
   name: regreg
@@ -11,13 +11,14 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip: true  # [py<=36]
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
   host:
     - pip
     - python
